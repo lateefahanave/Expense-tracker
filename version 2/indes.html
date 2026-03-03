@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker v2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 2rem;
+      margin-top: 3rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .input-section {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    input[type="text"], input[type="number"] {
+      flex: 1;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .expenses-list {
+      margin-top: 2rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    .expense-item {
+      background: #f0f0f0;
+      padding: 0.75rem 1rem;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .total {
+      margin-top: 1.5rem;
+      font-weight: 600;
+      text-align: center;
+      color: #333;
+    }
+
+    @media (max-width: 500px) {
+      .input-section {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Expense Tracker v2</h1>
+
+    <div class="input-section">
+      <input type="text" id="expense-name" placeholder="Expense name">
+      <input type="number" id="expense-amount" placeholder="Amount">
+      <button id="add-btn">Add</button>
+    </div>
+
+    <button id="load-btn" style="margin-top:1rem;">Load Sample Expenses</button>
+
+    <ul class="expenses-list" id="expenses-list">
+      <!-- Expenses will appear here -->
+    </ul>
+
+    <div class="total" id="total">Total: $0</div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
