@@ -1,19 +1,17 @@
-import ExpenseItem from "./ExpenseItem"
+import ExpenseItem from "./ExpenseItem";
 
-function ExpenseList({ expenses }) {
-
+function ExpenseList({ expenses, deleteExpense }) {
   return (
     <ul>
-      {expenses.map((expense, index) => (
+      {expenses.map(expense => (
         <ExpenseItem
-          key={index}
-          name={expense.name}
-          amount={expense.amount}
+          key={expense.id}
+          expense={expense}
+          deleteExpense={deleteExpense}
         />
       ))}
     </ul>
-  )
-
+  );
 }
 
-export default ExpenseList
+export default ExpenseList;
